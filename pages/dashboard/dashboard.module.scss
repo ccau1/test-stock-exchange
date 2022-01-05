@@ -1,0 +1,55 @@
+:root {
+  --primary-color: #f5eadb;
+  --secondary-color: #083d77;
+  --tertiary-color: #da4167;
+  --complimentary-color: #2e4057;
+  --text-color: #2e4057;
+
+  font-family: "Segoe UI", Roboto, "Helvetica Neue";
+}
+
+.mainWrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.appBarWrapper {
+  // height: 40px;
+  background-color: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e9e9e9;
+  padding: 10px 10px;
+  box-shadow: 1px 1px 10px #e9e9e9;
+}
+
+.appBarLeft {
+  & .title {
+    margin: 0;
+  }
+}
+
+.appBarRight {
+  display: flex;
+  flex-direction: row;
+
+  & button {
+    background-color: white;
+    border-radius: 4px;
+    padding: 8px 10px;
+    border: 1px solid #e9e9e9;
+    margin: 0;
+    color: #2e2e2e;
+  }
+  & button:active {
+    background-color: #f8f8f8;
+  }
+}
+
+.layoutWrapper {
+  flex: 1;
+}

@@ -1,0 +1,12 @@
+---
+name: Index Chart
+description: An index chart that shows analytical tickers
+labels: ["react", "chart"]
+---
+
+import { TimeSeriesChart } from "./time-series-chart";
+import { MOCK_DATA } from "./mockData";
+
+```js live
+<TimeSeriesChart series={MOCK_DATA.series} meta={MOCK_DATA.meta} />
+```
