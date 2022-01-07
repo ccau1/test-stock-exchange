@@ -1,0 +1,41 @@
+.orderListWrapper {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+
+.orderList {
+  width: 50%;
+}
+
+.orderListItem {
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  justify-content: space-between;
+
+  & p {
+    margin: 5px;
+    font-size: 10pt;
+  }
+  &.buyer {
+    flex-direction: row-reverse;
+    margin-right: 2px;
+  }
+}
+
+.orderListItemSumPercentage {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  opacity: 0.1;
+
+  &.seller {
+    background-color: #eb0e0e;
+    left: 0;
+  }
+  &.buyer {
+    background-color: #0096ff;
+    right: 0;
+  }
+}

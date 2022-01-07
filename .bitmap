@@ -9,11 +9,41 @@
  */
 
 {
+    "containers/order-book": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "containers/order-book"
+    },
+    "containers/order-form": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "containers/order-form"
+    },
+    "containers/positions": {
+        "scope": "",
+        "version": "",
+        "mainFile": "positions.tsx",
+        "rootDir": "containers/positions"
+    },
     "containers/time-series-chart": {
         "scope": "",
         "version": "",
         "mainFile": "index.ts",
         "rootDir": "containers/time-series-chart"
+    },
+    "hooks/use-force-update": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "hooks/use-force-update"
+    },
+    "hooks/use-resize": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "hooks/use-resize"
     },
     "pages/dashboard": {
         "scope": "",
@@ -21,11 +51,41 @@
         "mainFile": "index.ts",
         "rootDir": "pages/dashboard"
     },
+    "services/positions": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "services/positions"
+    },
+    "services/quotes": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "services/quotes"
+    },
     "ui/button": {
         "scope": "",
         "version": "",
         "mainFile": "button.tsx",
         "rootDir": "components/button"
+    },
+    "ui/order-book": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/order-book"
+    },
+    "ui/order-form": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/order-form"
+    },
+    "ui/positions": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/positions"
     },
     "ui/time-series-chart": {
         "scope": "",
@@ -38,6 +98,12 @@
         "version": "",
         "mainFile": "index.ts",
         "rootDir": "components/widget"
+    },
+    "utils/msg": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "utils/msg"
     },
     "$schema-version": "14.9.0"
 }
