@@ -7,6 +7,10 @@ labels: ["react", "chart"]
 import { TimeSeriesChart } from "./time-series-chart";
 import { MOCK_DATA } from "./mock-data";
 
+A stocks chart using the library [lightweight-charts](https://www.tradingview.com/lightweight-charts/) that is powered by Trading View.
+
 ```js live
-<TimeSeriesChart series={MOCK_DATA.series} meta={MOCK_DATA.meta} />
+<div style={{ height: 300, width: 500 }}>
+  <TimeSeriesChart series={MOCK_DATA.series} meta={MOCK_DATA.meta} />
+</div>
 ```

@@ -36,7 +36,9 @@ export const TimeSeriesChart = ({
   const chartRef = useRef<HTMLDivElement>(null);
   const chartObjRef = useRef<IChartApi>(null);
 
-  const { width, height, ref } = useResize();
+  const { width, height, ref } = useResize((size) =>
+    console.log("size resized", size.width)
+  );
 
   useLayoutEffect(() => {
     if (!series) return;

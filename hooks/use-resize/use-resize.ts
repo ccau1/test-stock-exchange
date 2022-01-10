@@ -17,7 +17,7 @@ export const useResize = (
     });
     const resizeObserver = new ResizeObserver((entries) => {
       const { width, height } = entries[0].contentRect;
-      if (size.width === width || size.height === height) return;
+      if (size.width === width && size.height === height) return;
 
       setSize({ width, height });
       onResize?.({ width, height });
@@ -26,7 +26,7 @@ export const useResize = (
     resizeObserver.observe(ref.current);
 
     return () => resizeObserver.disconnect();
-  }, [ref.current, onResize]);
+  }, [ref.current]);
 
   return { ref, ...size };
 };

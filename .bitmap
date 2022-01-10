@@ -63,6 +63,12 @@
         "mainFile": "index.ts",
         "rootDir": "services/quotes"
     },
+    "ui/alert": {
+        "scope": "",
+        "version": "",
+        "mainFile": "index.ts",
+        "rootDir": "components/alert"
+    },
     "ui/button": {
         "scope": "",
         "version": "",

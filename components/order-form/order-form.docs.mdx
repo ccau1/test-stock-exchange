@@ -1,0 +1,13 @@
+---
+name: button
+description: standard button
+labels: ["react", "order"]
+---
+
+import { OrderForm } from "./order-form";
+
+A list of pending buyer/seller orders, along with display of quantity percentage compare with total pending order quantity using background color.
+
+```js live
+<OrderForm onSubmit={(val) => console.log("submit values", val)} />
+```

@@ -1,79 +1,6 @@
 import React from "react";
 import styles from "./positions.module.scss";
 
-const PositionTableRow = ({
-  symbol,
-  posName,
-  qty,
-  marketValue,
-  purchasePrice,
-  netPercent,
-  currentPrice,
-  totalPL,
-  todayPL,
-}) => {
-  return (
-    <tr className={styles.tableRow}>
-      <td>
-        <p>{symbol}</p>
-        <small>{posName}</small>
-      </td>
-      <td>
-        <p>
-          {marketValue.toLocaleString("en-US", {
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2,
-          })}
-        </p>
-        <small>{qty}</small>
-      </td>
-      <td>
-        <p>
-          {currentPrice.toLocaleString("en-US", {
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2,
-          })}
-        </p>
-        <small>
-          {purchasePrice.toLocaleString("en-US", {
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2,
-          })}
-        </small>
-      </td>
-      <td>
-        <p
-          className={
-            todayPL === 0 ? "" : todayPL >= 0 ? styles.green : styles.red
-          }
-        >
-          {todayPL > 0 ? "+" : ""}
-          {todayPL.toLocaleString("en-US", {
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2,
-          })}
-        </p>
-      </td>
-      <td>
-        <p
-          className={
-            totalPL === 0 ? "" : totalPL >= 0 ? styles.green : styles.red
-          }
-        >
-          {totalPL > 0 ? "+" : ""}
-          {totalPL.toLocaleString("en-US", {
-            maximumFractionDigits: 2,
-            minimumFractionDigits: 2,
-          })}
-        </p>
-      </td>
-      <td>
-        <p>{netPercent.toFixed(2)}%</p>
-      </td>
-    </tr>
-  );
-};
-
 interface Position {
   symbol: string;
   name: string;
@@ -170,5 +97,78 @@ export const Positions = ({
         </table>
       </div>
     </div>
+  );
+};
+
+const PositionTableRow = ({
+  symbol,
+  name,
+  qty,
+  marketValue,
+  purchasePrice,
+  netPercent,
+  currentPrice,
+  totalPL,
+  todayPL,
+}) => {
+  return (
+    <tr className={styles.tableRow}>
+      <td>
+        <p>{symbol}</p>
+        <small>{name}</small>
+      </td>
+      <td>
+        <p>
+          {marketValue.toLocaleString("en-US", {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
+          })}
+        </p>
+        <small>{qty}</small>
+      </td>
+      <td>
+        <p>
+          {currentPrice.toLocaleString("en-US", {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
+          })}
+        </p>
+        <small>
+          {purchasePrice.toLocaleString("en-US", {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
+          })}
+        </small>
+      </td>
+      <td>
+        <p
+          className={
+            todayPL === 0 ? "" : todayPL >= 0 ? styles.green : styles.red
+          }
+        >
+          {todayPL > 0 ? "+" : ""}
+          {todayPL.toLocaleString("en-US", {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
+          })}
+        </p>
+      </td>
+      <td>
+        <p
+          className={
+            totalPL === 0 ? "" : totalPL >= 0 ? styles.green : styles.red
+          }
+        >
+          {totalPL > 0 ? "+" : ""}
+          {totalPL.toLocaleString("en-US", {
+            maximumFractionDigits: 2,
+            minimumFractionDigits: 2,
+          })}
+        </p>
+      </td>
+      <td>
+        <p>{netPercent.toFixed(2)}%</p>
+      </td>
+    </tr>
   );
 };

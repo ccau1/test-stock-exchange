@@ -10,11 +10,7 @@ import { OrderBook } from "@my-scope/containers.order-book";
 import { Positions } from "@my-scope/containers.positions";
 import { OrderForm } from "@my-scope/containers.order-form";
 import { DEFAULT_LAYOUTS } from "./data";
-import {
-  setCurrentSymbol,
-  getQuoteBySymbol,
-  getCurrentQuote,
-} from "@my-scope/services.quotes";
+import { setCurrentSymbol, getCurrentQuote } from "@my-scope/services.quotes";
 import { Msg } from "@my-scope/utils.msg";
 
 const ResponsiveGridLayout = WidthProvider(Responsive);
@@ -22,10 +18,9 @@ const ResponsiveGridLayout = WidthProvider(Responsive);
 export const Dashboard = () => {
   const [errorMessage, setErrorMessage] = useState("");
   const [layouts, _setLayouts] = useState(
-    // Cookies.get("dashboard_layout")
-    //   ? JSON.parse(Cookies.get("dashboard_layout"))
-    //   :
-    DEFAULT_LAYOUTS
+    Cookies.get("dashboard_layout")
+      ? JSON.parse(Cookies.get("dashboard_layout"))
+      : DEFAULT_LAYOUTS
   );
   const [currentSymbol, _setCurrentSymbol] = useState(
     getCurrentQuote()?.symbol

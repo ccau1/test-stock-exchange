@@ -2,6 +2,8 @@ import { Msg } from "@my-scope/utils.msg";
 import Cookies from "js-cookie";
 
 const ALPHA_VANTAGE_KEY = "21DYI4VFDQ2A33JH";
+const ALPHA_VANTAGE_KEY_2 = "6HC3QKT1XRFNT6UT";
+const ALPHA_VANTAGE_KEY_3 = "BCW4V0L92D0KTUJY";
 
 export interface SymbolQuote {
   symbol: string;
@@ -63,18 +65,23 @@ export const orderBookBuys = [];
 
 export const orderBookSells = [];
 
-export const getTimeSeriesUrl = (
-  kType: TimeSeriesChartKType,
-  symbol: string,
-  intervalMins?: number,
-  sliceYear?: number,
-  sliceMonth?: number
-) => {
-  return `https://www.alphavantage.co/query?function=TIME_SERIES_${kType}&outputsize=full&symbol=${symbol}${
-    intervalMins ? `&interval=${intervalMins}min` : ""
+export const getTimeSeriesUrl = (opts: {
+  kType: TimeSeriesChartKType;
+  symbol: string;
+  apiKey?: string;
+  intervalMins?: number;
+  sliceYear?: number;
+  sliceMonth?: number;
+}) => {
+  return `https://www.alphavantage.co/query?function=TIME_SERIES_${
+    opts.kType
+  }&outputsize=full&symbol=${opts.symbol}${
+    opts.intervalMins ? `&interval=${opts.intervalMins}min` : ""
   }${
-    sliceYear && sliceMonth ? `&year${sliceYear}month${sliceMonth}` : ""
-  }&apikey=${ALPHA_VANTAGE_KEY}`;
+    opts.sliceYear && opts.sliceMonth
+      ? `&year${opts.sliceYear}month${opts.sliceMonth}`
+      : ""
+  }&apikey=${opts.apiKey || ALPHA_VANTAGE_KEY}`;
 };
 
 const timeSeriesCache = {};
@@ -98,7 +105,11 @@ export const getTimeSeriesData = async ({
     return timeSeriesCache[identifier];
   }
 
-  const data = await (await fetch(getTimeSeriesUrl(kType, symbol))).json();
+  const data = await (
+    await fetch(
+      getTimeSeriesUrl({ kType, symbol, apiKey: ALPHA_VANTAGE_KEY_2 })
+    )
+  ).json();
 
   const seriesRaw = data[Object.keys(data).find((j) => /Time Series/.test(j))];
 

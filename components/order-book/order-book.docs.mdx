@@ -1,0 +1,22 @@
+---
+name: button
+description: standard button
+labels: ["react", "order"]
+---
+
+import { OrderBook } from "./order-book";
+
+A list of pending buyer/seller orders, along with display of quantity percentage compare with total pending order quantity using background color.
+
+```js live
+<OrderBook
+  buyers={[
+    { price: 12, amt: 2, total: 24 },
+    { price: 11.93, amt: 10, total: 119.3 },
+  ]}
+  sellers={[
+    { price: 12.1, amt: 10, total: 121.0 },
+    { price: 12.4, amt: 4, total: 49.6 },
+  ]}
+/>
+```
