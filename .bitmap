@@ -69,12 +69,6 @@
         "mainFile": "index.ts",
         "rootDir": "components/alert"
     },
-    "ui/button": {
-        "scope": "",
-        "version": "",
-        "mainFile": "button.tsx",
-        "rootDir": "components/button"
-    },
     "ui/order-book": {
         "scope": "",
         "version": "",
