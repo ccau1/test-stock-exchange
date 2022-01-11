@@ -1,0 +1,22 @@
+version: "3.9" # optional since v1.27.0
+services:
+  # bit:
+  #   image: bitcli/bit:latest
+  bit-server:
+    build:
+      context: .
+      target: development
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/usr/src/app
+    mem_limit: 2048M
+    mem_reservation: 2048M
+    deploy:
+      resources:
+        limits:
+          cpus: "2"
+          memory: 2048M
+        reservations:
+          cpus: "2"
+          memory: 2048M
