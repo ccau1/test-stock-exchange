@@ -10,12 +10,10 @@ it("should render with the correct text", () => {
 
 it("should render correct color (default)", () => {
   const { container } = render(<Alert>testing 123</Alert>);
-  // const containerStyle = container.get(0).style;
   expect(container).toHaveStyle(`color: "#004085"`);
 });
 
 it("should render correct color (defined color props)", () => {
   const { container } = render(<Alert color="danger">testing 123</Alert>);
-  // const containerStyle = container.get(0).style;
   expect(container).toHaveStyle(`color: "#721c24"`);
 });

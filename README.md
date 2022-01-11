@@ -1,3 +1,7 @@
+<p align="center" width="100%">
+  <img width="75%" src="https://github.com/ccau1/test-stock-exchange/blob/master/test-walk-through.gif">
+</p>
+
 # Test Stock Exchange
 
 This is an example to demonstrate how to use a micro-frontend framework to write comprehensive structure from utils to services to components to pages. This is not meant to be a full-fledge project since many data and business plans are still vague.

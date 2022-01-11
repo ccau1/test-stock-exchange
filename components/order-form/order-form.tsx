@@ -27,19 +27,23 @@ interface FormValues {
 
 interface OrderFormProps {
   onSubmit: (values) => void;
+  initialValues?: FormValues;
 }
 
-export const OrderForm = ({ onSubmit }: OrderFormProps) => {
+export const OrderForm = ({
+  onSubmit,
+  initialValues = {
+    type: "limit",
+    price: 0,
+    qty: 0,
+    action: "buy",
+  },
+}: OrderFormProps) => {
   const [error, setError] = useState("");
   return (
     <div className={styles.mainWrapper}>
       <Formik<FormValues>
-        initialValues={{
-          type: "limit",
-          price: 0,
-          qty: 0,
-          action: "buy",
-        }}
+        initialValues={initialValues}
         validationSchema={validationSchema}
         onSubmit={async (values, { setSubmitting, resetForm }) => {
           setSubmitting(true);
@@ -106,9 +110,9 @@ export const OrderForm = ({ onSubmit }: OrderFormProps) => {
             <ErrorMessage name="qty" />
             <div className={styles.buttonWrapper}>
               <button
-                onClick={(e) => {
+                onClick={() => {
                   setValues({ ...values, action: "buy" });
-                  handleSubmit(e);
+                  handleSubmit();
                 }}
                 disabled={isSubmitting}
                 className={styles.buyButton}
@@ -116,9 +120,9 @@ export const OrderForm = ({ onSubmit }: OrderFormProps) => {
                 BUY
               </button>
               <button
-                onClick={(e) => {
+                onClick={() => {
                   setValues({ ...values, action: "sell" });
-                  handleSubmit(e);
+                  handleSubmit();
                 }}
                 disabled={isSubmitting}
                 className={styles.sellButton}

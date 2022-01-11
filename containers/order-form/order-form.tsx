@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { OrderForm as OrderFormComponent } from "@my-scope/ui.order-form";
 import { addPosition, removePosition } from "@my-scope/services.positions";
-import { getCurrentSymbol } from "@my-scope/services.quotes";
+import { getCurrentSymbol, getCurrentQuote } from "@my-scope/services.quotes";
 import { Msg } from "@my-scope/utils.msg";
 
 export const OrderForm = () => {
@@ -38,5 +38,18 @@ export const OrderForm = () => {
     [currentSymbol]
   );
 
-  return <OrderFormComponent onSubmit={onSubmit} />;
+  if (!getCurrentQuote()) return null;
+
+  return (
+    <OrderFormComponent
+      key={`order-form-${currentSymbol}`}
+      onSubmit={onSubmit}
+      initialValues={{
+        type: "limit",
+        price: getCurrentQuote().price,
+        qty: 0,
+        action: "buy",
+      }}
+    />
+  );
 };

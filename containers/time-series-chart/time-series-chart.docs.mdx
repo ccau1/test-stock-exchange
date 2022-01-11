@@ -6,6 +6,10 @@ labels: ["react", "chart"]
 
 import { TimeSeriesChart } from "./time-series-chart";
 
+A stocks chart using the library [lightweight-charts](https://www.tradingview.com/lightweight-charts/) that is powered by Trading View.
+
 ```js live
-<TimeSeriesChart symbol="TSLA" kType="DAILY" />
+<div style={{ height: 300, width: 500 }}>
+  <TimeSeriesChart kType="DAILY" symbol="TSLA" />
+</div>
 ```

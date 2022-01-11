@@ -13,6 +13,8 @@ import { DEFAULT_LAYOUTS } from "./data";
 import { setCurrentSymbol, getCurrentQuote } from "@my-scope/services.quotes";
 import { Msg } from "@my-scope/utils.msg";
 
+type KType = "DAILY" | "WEEKLY" | "MONTHLY";
+
 const ResponsiveGridLayout = WidthProvider(Responsive);
 
 export const Dashboard = () => {
@@ -56,8 +58,8 @@ export const Dashboard = () => {
 
   const symbolInputRef = useRef<HTMLInputElement>(null);
 
-  const [kType, setKType] = useState<"DAILY" | "WEEKLY" | "MONTHLY">("DAILY");
-  const kTypeOptions = [
+  const [kType, setKType] = useState<KType>("DAILY");
+  const kTypeOptions: Array<{ value: KType; text: string }> = [
     { value: "DAILY", text: "1D" },
     { value: "WEEKLY", text: "1W" },
     { value: "MONTHLY", text: "1M" },

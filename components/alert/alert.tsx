@@ -25,7 +25,7 @@ interface AlertProps {
 }
 
 export const Alert = ({
-  color = "default",
+  color = "info",
   children,
   style,
   className,

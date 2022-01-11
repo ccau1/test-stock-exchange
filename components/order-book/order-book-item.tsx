@@ -11,11 +11,8 @@ interface OrderListItemProps {
   key?: string;
 }
 
-export const OrderListItem = forwardRef(
-  (
-    { price, amount, total, sumTotal, sell, ...props }: OrderListItemProps,
-    ref
-  ) => {
+export const OrderListItem = forwardRef<HTMLDivElement, OrderListItemProps>(
+  ({ price, amount, total, sumTotal, sell, ...props }, ref) => {
     return (
       <motion.div
         {...props}

@@ -9,11 +9,8 @@ interface WidgetProps {
   renderRight?: () => React.ReactNode;
 }
 
-export const Widget = forwardRef(
-  (
-    { children, style, className, title, renderRight, ...props }: WidgetProps,
-    ref
-  ) => {
+export const Widget = forwardRef<HTMLDivElement, WidgetProps>(
+  ({ children, style, className, title, renderRight, ...props }, ref) => {
     return (
       <div
         ref={ref}

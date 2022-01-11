@@ -3,7 +3,7 @@ import styles from "./positions.module.scss";
 
 interface Position {
   symbol: string;
-  name: string;
+  symbolName: string;
   qty: number;
   marketValue: number;
   purchasePrice: number;
@@ -102,7 +102,7 @@ export const Positions = ({
 
 const PositionTableRow = ({
   symbol,
-  name,
+  symbolName,
   qty,
   marketValue,
   purchasePrice,
@@ -115,7 +115,7 @@ const PositionTableRow = ({
     <tr className={styles.tableRow}>
       <td>
         <p>{symbol}</p>
-        <small>{name}</small>
+        <small>{symbolName}</small>
       </td>
       <td>
         <p>
