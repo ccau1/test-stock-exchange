@@ -93,8 +93,8 @@ There aren't much in here, but [framer-motion](https://www.framer.com/motion/) i
 1. since this involves using a third-party ([Alpha Vantage](https://www.alphavantage.co/)) library for quote information, we must be aware we are only allowed: 5 API calls per minute, and 500 API calls a day
 2. since third-party ([Alpha Vantage](https://www.alphavantage.co/)) library is very limited, I chose to simulate order book and position's current prices
 
-## Missing Features
+## TODO
 
-1. order form type and price doesn't actually take effect. This is because it requires an order system for matching buyers to sellers and watching trigger targets (ie. stop limits)
-2. positions PL & MV are simulated
-3. only the ui section has test & documentations, for example purposes
+- [ ] make order type (ie. Stop Limit, Trailing Stop Limit) working
+- [ ] fetch real data for PL & MV (currently simulated)
+- [ ] complete test & documentation (currently only in UI section)
