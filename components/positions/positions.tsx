@@ -16,19 +16,24 @@ interface Position {
 interface PositionsProps {
   positions: Position[];
   sortBy: string;
-  sortAsc: boolean;
+  sortAsc?: boolean;
   onSortByClick: (sortBy: string) => void;
 }
 
-const sortField = (sortBy: string, sortAsc) => (a: Position, b: Position) => {
-  if (!isNaN(parseFloat(a[sortBy]))) {
-    // is a number
-    return (sortAsc ? 1 : -1) * ((a[sortBy] as number) - (b[sortBy] as number));
-  } else {
-    // default to string
-    return (sortAsc ? 1 : -1) * (a[sortBy] as string).localeCompare(b[sortBy]);
-  }
-};
+const sortField =
+  (sortBy: string, sortAsc: boolean) => (a: Position, b: Position) => {
+    if (!isNaN(parseFloat(a[sortBy]))) {
+      // is a number
+      return (
+        (sortAsc ? 1 : -1) * ((a[sortBy] as number) - (b[sortBy] as number))
+      );
+    } else {
+      // default to string
+      return (
+        (sortAsc ? 1 : -1) * (a[sortBy] as string).localeCompare(b[sortBy])
+      );
+    }
+  };
 
 const sortStyles = (id: string, currentSortBy: string, isAsc: boolean) => {
   if (id !== currentSortBy) return "";

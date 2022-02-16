@@ -13,7 +13,7 @@ interface OrderBookProps {
   sellers: OrderBookOrder[];
 }
 
-export const OrderBook = ({ buyers, sellers }: OrderBookProps) => {
+export const OrderBook = ({ buyers = [], sellers = [] }: OrderBookProps) => {
   const sumTotalBuyers = buyers.reduce((sum, o) => sum + o.total, 0);
   const sumTotalSellers = sellers.reduce((sum, o) => sum + o.total, 0);
 
